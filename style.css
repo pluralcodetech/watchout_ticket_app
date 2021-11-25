@@ -1,0 +1,67 @@
+.margin-center {
+    margin: 2% auto;
+}
+
+.margin-center2 {
+    margin: 10% auto;
+}
+
+.card-width {
+    max-width: 533px;
+    border-radius: 10px;
+}
+
+
+.card-header {
+    background-color: #0646A2;
+    padding: 30px;
+}
+
+.info {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.cab {
+    margin-right: 20px;
+    width: 10%;
+}
+
+.card-title {
+    color: #0646A2;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.card-body {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+hr.new {
+    border-top: 3px dotted #a5a1a1;
+}
+
+.primary-color {
+    color: #0646A2;
+    font-weight: bold;
+}
+
+.phone {
+    margin-right: 20px;
+}
+
+.button-receipt {
+    background-color: #0646A2;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    padding: 15px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+}
