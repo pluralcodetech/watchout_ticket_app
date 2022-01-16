@@ -39,7 +39,7 @@ curl_close($ch);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="content">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +53,7 @@ curl_close($ch);
 </head>
 <body>
     <div class="container">
-        <div class="card card-width margin-center" id="content">
+        <div class="card card-width margin-center">
             <div class="card-header text-center">
                 <p><img src="img/dashicons_car.png" alt="" class="cab"><span class="info">Cab Ticket</span></p>
             </div>
@@ -77,7 +77,7 @@ curl_close($ch);
                     <div class="p-2 justify-content-end"><?php echo $decoded['date']?></div>
                 </div>
 
-                .html2pdf__pagebre
+                <div class="html2pdf__pagebreak"></div>
 
                 <div class="d-flex flex-row justify-content-between">
                     <div class="p-2">Time</div>
@@ -89,11 +89,18 @@ curl_close($ch);
                     <div class="p-2 justify-content-end"><?php echo $decoded['from']?></div>
                 </div>
 
+                <div class="html2pdf__pagebreak"></div>
+
                 <div class="d-flex flex-row justify-content-between">
                     <div class="p-2">Destination</div>
                     <div class="p-2 justify-content-end"><?php echo $decoded['destination']?></div>
                 </div>
-                <hr class="new">
+
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="p-2">Estimated Total</div>
+                    <div class="p-2 justify-content-end"><?php echo $decoded['ext_main']?> - <?php echo $decoded['ext_max']?></div>
+                </div>
+                <!-- <hr class="new"> -->
 
                 <h4 class="primary-color m-2">Achan Customer Service</h4>
                
@@ -105,13 +112,7 @@ curl_close($ch);
                 
                 <?php echo "<a href='driver.php?id=$id' target='_blank'> <button class='button-receipt'>View Driver Details</button> </a>";?>
 
-                <hr class="new">
-                <h4 class="primary-color m-2">Estimated Cost</h4>
-
-                <div class="d-flex flex-row justify-content-between">
-                    <div class="p-2">Estimated Total</div>
-                    <div class="p-2 justify-content-end"><?php echo $decoded['ext_main']?> - <?php echo $decoded['ext_max']?></div>
-                </div>
+                
             </div>
         </div>
         <center>

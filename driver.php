@@ -1,7 +1,10 @@
 <?php
+if(isset($_GET['id'])){
+
+    $id=$_GET['id'];
 
 $post = [
-    'id' => 10
+    'id' => $id
 ];
 
 $ch = curl_init('https://watchoutachan.herokuapp.com/api/drivers_info');
@@ -24,6 +27,7 @@ else{
 
 // close the connection, release resources used
 curl_close($ch);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
