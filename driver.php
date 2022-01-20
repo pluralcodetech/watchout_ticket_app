@@ -3,30 +3,34 @@ if(isset($_GET['id'])){
 
     $id=$_GET['id'];
 
-$post = [
-    'id' => $id
-];
+    $post = [
+        'id' => $id
+    ];
 
-$ch = curl_init('https://watchoutachan.herokuapp.com/api/drivers_info');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    $ch = curl_init('https://watchoutachan.herokuapp.com/api/drivers_info');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-// execute!
-$response = curl_exec($ch);
+    // execute!
+    $response = curl_exec($ch);
 
-if($e = curl_error($ch)) {
-    echo $e;
-}
-
-else{
-    $decoded = json_decode($response, true);
-    foreach($decoded as $key => $val) {
-         $key . ': ' . $val . '<br>';
+    if($response = "") {
+        header("location: noresponse.php");
     }
-}
 
-// close the connection, release resources used
-curl_close($ch);
+    elseif($e = curl_error($ch)) {
+        echo $e;
+    }
+
+    else{
+        $decoded = json_decode($response, true);
+        foreach($decoded as $key => $val) {
+            $key . ': ' . $val . '<br>';
+        }
+    }
+
+    // close the connection, release resources used
+    curl_close($ch);
 }
 ?>
 <!DOCTYPE html>
