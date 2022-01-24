@@ -50,8 +50,25 @@ curl_close($ch);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div id="simpleModal" class="myModal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <p id="para">Please select your reason for <br>canceling the trip</p>
+
+            <form>
+                <center>
+                    <a><button class="drive" id="late" type="button">Drive came late</button></a>
+                    <a><button class="drive" id="flightCancelled" type="button">Flight Cancelled</button></a>
+                    <a><button class="drive" id="reschedule" type="button">Personal Plan reschedule</button></a>
+
+                    <button class="cancel" id="theButton">Cancel Booking</button>
+                </center>
+            </form>
+        </div>
+    </div>
     <div class="container">
         <div class="card card-width margin-center">
             <div class="card-header text-center">
@@ -111,7 +128,11 @@ curl_close($ch);
                 
                 
                 <?php echo "<a href='driver.php?id=$id' target='_blank'> <button class='button-receipt'>View Driver Details</button> </a>";?>
-
+                <center>
+                  <button class="button" style="outline: none; box-shadow: none; 
+                  border: 0; color: #0646A2; background-color: #fff; 
+                  margin-top: 20px; font-size: 18px; font-weight: 600;" id="myCancel">Cancel Booking</button>
+                </center>
                 
             </div>
         </div>
